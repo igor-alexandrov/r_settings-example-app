@@ -1,0 +1,31 @@
+<div class="b-form__item">
+  <%= f.error_messages :id => "error_explanation",
+                       :class => "b-form_errors g-light_gray",
+                       :header_message => "Oupss...",
+                       :message => "Your setting cannot be saved"
+  %>
+</div>
+<div class="b-form__item">
+  <%= f.label :key, "Key:", :class => "b-form__label" %>
+  <% if f.object.new_record? %>
+      <%= f.text_field :key, :class => "b-form__input-text" %>
+  <% else %>
+      <%= f.text_field :key, :class => "b-form__input-text", :readonly => true %>
+  <% end %>
+
+</div>
+<div class="b-form__item">
+  <%= f.label :data_type, "Data type:", :class => "b-form__label g-inline" %>
+  <% if f.object.new_record? %>
+      <%= f.select :data_type, RSettings.data_types %>
+  <% else %>
+      <%= f.text_field :data_type, :class => "b-form__input-text", :readonly => true %>
+  <% end %>
+</div>
+<div class="b-form__item">
+  <%= f.label :formatted_value, "Value:", :class => "b-form__label" %>
+  <%= f.text_field :formatted_value, :class => "b-form__input-text" %>
+</div>
+<div class="b-form__item">
+  <%= f.submit "create", :class => "b-form__input-submit" %>
+</div>

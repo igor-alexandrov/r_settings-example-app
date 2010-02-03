@@ -1,0 +1,4 @@
+<h1 class="b-h1">New setting for User “<%= @user.login %>”</h1>
+<% form_for @setting, :url => user_settings_path(@user), :html => {:class => "b-form"} do |f| %>
+    <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>

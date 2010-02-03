@@ -1,0 +1,32 @@
+<h1 class="b-h1">Global settings</h1>
+<h3 class="b-h3"><%= link_to "add new", new_setting_path %></h3>
+<table>
+  <thead>
+  <tr>
+    <th>key</th>
+    <th>
+      value
+      <small>(This is a DB value)</small>
+    </th>
+    <th>data_type</th>
+    <th>actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @settings.each do |setting| %>
+      <tr>
+        <td><%= link_to setting.key, setting_path(setting) %></td>
+        <td><%= setting.value %></td>
+        
+        <td><%= setting.data_type %></td>
+        <td>
+
+          <%= link_to "edit", edit_setting_path(setting) %>
+          <%= link_to 'destroy', setting_path(setting), :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

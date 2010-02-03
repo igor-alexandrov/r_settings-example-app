@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <title><%= h(yield(:title) || "Untitled") %></title>
+  <%= stylesheet_link_tag 'master' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+<div class="l-container">
+  <div class="l-layout">
+    <% unless flash[:message].blank? %>
+        <div class='b-flash_message'>
+          <%= flash[:message] %>
+        </div>
+    <% end %>
+    <div class="h-padding">
+      <div class="b-content">
+
+        <div class="b-breadcrumbs">
+          <% if @breadcrumbs %>
+              <% @breadcrumbs[0..-2].each do |txt, path| %>
+                  <%= link_to(h(txt), path) %> &#8594;
+              <% end %>
+              <%= @breadcrumbs.last.first %>
+          <% end %>
+        </div>
+        <%= yield :content or yield %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
