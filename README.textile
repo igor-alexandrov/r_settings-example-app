@@ -1,0 +1,25 @@
+h1. What is r_settings?
+
+r_settings is a plugin to manage all kinds of setting on your site easily. You can find it "here":http://github.com/igor-alexandrov/r_settings.
+
+h1. How to setup this example app?
+
+All is really very easy. Clone repository
+
+@git init git://github.com/igor-alexandrov/r_settings.git@ 
+
+now you should initialize r_settings plugin as a submodule
+
+@git submodule init@
+
+@git submodule update@
+
+Ok, now just do a standart manipulations for Rails apps.
+
+@rake db:migrate@
+
+@rake db:seed@
+
+@./script/server@
+
+All is done now. Open your browser and try r_settings!
