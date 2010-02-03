@@ -6,7 +6,7 @@ h1. How to setup this example app?
 
 All is really very easy. Clone repository
 
-@git init git://github.com/igor-alexandrov/r_settings.git@ 
+@git clone git://github.com/igor-alexandrov/r_settings-example-app.git@ 
 
 now you should initialize r_settings plugin as a submodule
 
