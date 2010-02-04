@@ -1,4 +1,4 @@
 <h1 class="b-h1">Editing setting “<%= @setting.key %>” for User “<%= @user.login %>”</h1>
 <% form_for [@user, @setting], :url => user_setting_path(@user, @setting), :html => {:class => "b-form"} do |f| %>
-    <%= render :partial => "form", :locals => {:f => f} %>
+    <%= render :partial => "shared/form", :locals => {:f => f} %>
 <% end %>

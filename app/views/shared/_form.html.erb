@@ -27,9 +27,13 @@
   <%= f.text_field :formatted_value, :class => "b-form__input-text" %>
 </div>
 <div class="b-form__item">
+  <%= f.label :description, "Description:", :class => "b-form__label" %>
+  <%= f.text_area :description, :class => "b-form__input-text b-form__input-text_short" %>
+</div>
+<div class="b-form__item">
   <% if f.object.new_record? %>
       <%= f.submit "create", :class => "b-form__input-submit" %>
   <% else %>
       <%= f.submit "update", :class => "b-form__input-submit" %>
   <% end %>
-</div>
+</div> 

@@ -1,22 +1,4 @@
 <% title "Setting for User “#{@user.login}”  — “#{@setting.key}”" %>
 <h1 class="b-h1">Setting for User “<%= @user.login %>”  — “<%= @setting.key %>”</h1>
 <h2 class="b-h2"><%= link_to "edit", edit_user_setting_path(@user, @setting) %></h2>
-
-<div class="b-setting">
-  <div class="b-setting_attribute">
-    <span class="b-setting_attribute__title">Key:</span>
-    <span class="b-setting_attribute__value"><%= @setting.key %></span>
-  </div>
-  <div class="b-setting_attribute">
-    <span class="b-setting_attribute__title">Data type:</span>
-    <span class="b-setting_attribute__value"><%= @setting.data_type %></span>
-  </div>
-  <div class="b-setting_attribute">
-    <span class="b-setting_attribute__title">DB Value:</span>
-    <span class="b-setting_attribute__value"><%= @setting.value %></span>
-  </div>
-  <div class="b-setting_attribute">
-    <span class="b-setting_attribute__title">Cached Value:</span>
-    <span class="b-setting_attribute__value"><%= @cached_value %></span>
-  </div>
-</div>
+<%= render :partial => "shared/show", :locals => {:setting => @setting, :cached_value => @cached_value} %>

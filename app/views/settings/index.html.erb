@@ -9,6 +9,7 @@
       <small>(This is a DB value)</small>
     </th>
     <th>data_type</th>
+    <th>description</th>
     <th>actions</th>
   </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= setting.value %></td>
         
         <td><%= setting.data_type %></td>
+        <td><%= setting.description %></td>
         <td>
 
           <%= link_to "edit", edit_setting_path(setting) %>

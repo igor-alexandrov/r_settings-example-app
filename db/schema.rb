@@ -9,19 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100131212819) do
+ActiveRecord::Schema.define(:version => 20100204124750) do
 
   create_table "r_settings", :force => true do |t|
-    t.string   "key",                       :null => false
+    t.string   "key",                         :null => false
     t.text     "value"
     t.string   "data_type"
+    t.string   "description", :limit => 1000
     t.integer  "object_id"
     t.string   "object_type", :limit => 30
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "r_settings", ["object_type", "object_id", "key"], :name => "index_r_settings_on_object_type_and_object_id_and_key"
+  add_index "r_settings", ["object_type", "object_id", "key"], :name => "index_r_settings_on_object_type_and_object_id_and_key", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "login"

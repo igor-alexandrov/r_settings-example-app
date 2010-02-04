@@ -1,3 +1,4 @@
 [submodule "vendor/plugins/r_settings"]
 	path = vendor/plugins/r_settings
 	url = git://github.com/igor-alexandrov/r_settings.git
+
